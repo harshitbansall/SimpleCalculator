@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+
 namespace Calculator
 {
     public partial class MainWindow : Window
@@ -12,11 +14,36 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
-            //List<int> intNums = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            //foreach (int num in intNums)
-            //{
+            acButton.Click += (s, e) =>
+            {
+                mainTextBox.Text = "0";
+            };
 
-            //}
+            List<Button> numericButtons = new List<Button> { zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton };
+            foreach (Button currentButton in numericButtons)
+            {
+                currentButton.Click += (s, e) =>
+                {
+                    if (mainTextBox.Text != "0")
+                    {
+                        mainTextBox.Text = mainTextBox.Text + numericButtons.IndexOf(currentButton);
+                    }
+                    else
+                    {
+                        mainTextBox.Text = numericButtons.IndexOf(currentButton).ToString();
+                    }
+
+                };
+            }
+
+            pointButton.Click += (s, e) =>
+            {
+                if (mainTextBox.Text.Contains(".") == false)
+                {
+                    mainTextBox.Text = mainTextBox.Text + ".";
+                }
+                
+            };
         }
     }
 }
