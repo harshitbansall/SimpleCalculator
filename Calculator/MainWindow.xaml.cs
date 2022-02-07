@@ -18,7 +18,7 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            DataContext = this;
             Brush focusColor = Brushes.Yellow;
             Brush defaultColor = Brushes.Black;
             string firstQuery = null;
@@ -54,39 +54,51 @@ namespace Calculator
                 };
             }
 
-            
+
             plusButton.Click += (s, e) =>
             {
-                focusOperation = plusButton;
-                focusOperation.Background = focusColor;
-                firstQuery = mainTextBox.Text;
-                mainTextBox.Text = "";
+                if (focusOperation != plusButton)
+                {
+                    focusOperation = plusButton;
+                    focusOperation.Background = focusColor;
+                    firstQuery = mainTextBox.Text;
+                    mainTextBox.Text = "";
+                }
             };
             minusButton.Click += (s, e) =>
             {
-                focusOperation = minusButton;
-                focusOperation.Background = focusColor;
-                firstQuery = mainTextBox.Text;
-                mainTextBox.Text = "";
+                if (focusOperation != minusButton)
+                {
+                    focusOperation = minusButton;
+                    focusOperation.Background = focusColor;
+                    firstQuery = mainTextBox.Text;
+                    mainTextBox.Text = "";
+                }
             };
             multiplyButton.Click += (s, e) =>
             {
-                focusOperation = multiplyButton;
-                focusOperation.Background = focusColor;
-                firstQuery = mainTextBox.Text;
-                mainTextBox.Text = "";
+                if (focusOperation != multiplyButton) 
+                { 
+                    focusOperation = multiplyButton;
+                    focusOperation.Background = focusColor;
+                    firstQuery = mainTextBox.Text;
+                    mainTextBox.Text = "";
+                }
             };
             divideButton.Click += (s, e) =>
             {
-                focusOperation = divideButton;
-                focusOperation.Background = focusColor;
-                firstQuery = mainTextBox.Text;
-                mainTextBox.Text = "";
+                if (focusOperation != divideButton)
+                {
+                    focusOperation = divideButton;
+                    focusOperation.Background = focusColor;
+                    firstQuery = mainTextBox.Text;
+                    mainTextBox.Text = "";
+                }
             };
 
             equalsButton.Click += (s, e) =>
             {
-                focusOperation.Background = default;
+                focusOperation.Background = defaultColor;
                 if (focusOperation.Content.Equals("+")){ mainTextBox.Text = (float.Parse(firstQuery) + float.Parse(mainTextBox.Text)).ToString(); }
                 else if (focusOperation.Content.Equals("-")) { mainTextBox.Text = (float.Parse(firstQuery) - float.Parse(mainTextBox.Text)).ToString(); }
                 else if (focusOperation.Content.Equals("*")) { mainTextBox.Text = (float.Parse(firstQuery) * float.Parse(mainTextBox.Text)).ToString(); }
