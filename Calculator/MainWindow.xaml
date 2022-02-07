@@ -23,8 +23,8 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button x:Name="acButton" Content="AC" Grid.Column="0" Grid.Row="0" FontSize="20" Background="{Binding defaultColor}"></Button>
-            <Button x:Name="plusMinusButton" Content="+/-" Grid.Column="1" Grid.Row="0" FontSize="20" Background="{Binding defaultColor}"></Button>
+            <Button x:Name="acButton" Content="AC" Grid.Column="0" Grid.Row="0" FontSize="20"></Button>
+            <Button x:Name="plusMinusButton" Content="+/-" Grid.Column="1" Grid.Row="0" FontSize="20"></Button>
             <Button x:Name="percentageButton" Content="%" Grid.Column="2" Grid.Row="0" FontSize="20" Background="{Binding defaultColor}"></Button>
             <Button x:Name="divideButton" Content="/" Grid.Column="3" Grid.Row="0" FontSize="20" Background="{Binding defaultColor}"></Button>
 

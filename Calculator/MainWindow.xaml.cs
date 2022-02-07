@@ -87,10 +87,10 @@ namespace Calculator
             equalsButton.Click += (s, e) =>
             {
                 focusOperation.Background = default;
-                if (focusOperation.Content.Equals("+")){ mainTextBox.Text = (Int16.Parse(firstQuery) + Int16.Parse(mainTextBox.Text)).ToString(); }
-                else if (focusOperation.Content.Equals("-")) { mainTextBox.Text = (Int16.Parse(firstQuery) - Int16.Parse(mainTextBox.Text)).ToString(); }
-                else if (focusOperation.Content.Equals("*")) { mainTextBox.Text = (Int16.Parse(firstQuery) * Int16.Parse(mainTextBox.Text)).ToString(); }
-                else if (focusOperation.Content.Equals("/")) { mainTextBox.Text = (Int16.Parse(firstQuery) / Int16.Parse(mainTextBox.Text)).ToString(); }
+                if (focusOperation.Content.Equals("+")){ mainTextBox.Text = (float.Parse(firstQuery) + float.Parse(mainTextBox.Text)).ToString(); }
+                else if (focusOperation.Content.Equals("-")) { mainTextBox.Text = (float.Parse(firstQuery) - float.Parse(mainTextBox.Text)).ToString(); }
+                else if (focusOperation.Content.Equals("*")) { mainTextBox.Text = (float.Parse(firstQuery) * float.Parse(mainTextBox.Text)).ToString(); }
+                else if (focusOperation.Content.Equals("/")) { mainTextBox.Text = (float.Parse(firstQuery) / float.Parse(mainTextBox.Text)).ToString(); }
             };
             
         }
